@@ -1,7 +1,9 @@
 <?php $title = 'Hello world'; ?>
 
 <?php ob_start(); ?>
-<h1>Bonjour.</h1>
+
+<h1>L'accueil est ici</h1>
+
 <?php
 if((isset($_POST["logout"]))&&($_POST["logout"]=="logout"))
   {
