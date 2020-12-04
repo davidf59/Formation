@@ -2,6 +2,7 @@
 
 <?php ob_start(); ?>
 <h1>Salut tout le monde !!</h1>
+<h2>J'espère que vous allez bien</h2>
 <?php
 if((isset($_POST["logout"]))&&($_POST["logout"]=="logout"))
   {
