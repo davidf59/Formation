@@ -9,7 +9,7 @@
 
   $dompdf->render();
   $output = $dompdf->output();
-  file_put_contents('Brochure.pdf', $output);
+  file_put_contents('Public/PDF/'.time().'.pdf', $output);
 
   spl_autoload_register(function ($class_name) {
     include $class_name . '.php';
