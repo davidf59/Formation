@@ -5,6 +5,36 @@
 <h1>L'accueil est ici</h1>
 
 <?php
+/*
+  $client = new GuzzleHttp\Client();
+  $res = $client->request('GET', 'http://swapi.dev/api/planets/');
+  $tab = json_decode($res->getBody());
+//  echo print_r($tab->results);
+  foreach ($tab->results as $col => $obj) {
+    echo $obj->name;
+  } */
+?>
+
+<?php
+  $client = new GuzzleHttp\Client();
+  $r = $client->request('POST', 'https://jsonplaceholder.typicode.com/posts', [
+    'form_params' => ['title' => 'foo',
+                      'body' => 'bar',
+                      'userId' => 1
+                     ]
+    ]);
+  $tab = json_decode($r->getBody());
+  echo print_r($tab);
+  
+
+/*  $client = new GuzzleHttp\Client();
+  $r = $client->request('GET', 'https://jsonplaceholder.typicode.com/posts/1');
+  echo print_r(json_decode($r->getBody()));*/
+
+
+?>
+
+<?php
 if((isset($_POST["logout"]))&&($_POST["logout"]=="logout"))
   {
         setcookie("auth","",time()-60,"/","",0);
@@ -25,6 +55,7 @@ if ($droits):
 </h2>
 <p>
     <a href="./?action=products">Table Products</a>
+    <a href="./?action=planetes">Planetes</a>
 </p>
 
 </article>

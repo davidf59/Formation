@@ -1,10 +1,12 @@
 <?php $title = 'Hello world'; ?>
 
-<?php ob_start(); ?>
+<?php ob_start(); 
+//<form name="login" action="/david/Formation/?action=login" method="POST">
+?>
    
 <h1>Page de connexion</h1>
 
-<form name="login" action="/david/Formation/?action=login" method="POST">
+<form name="login" action="<?php echo "/".basename(dirname(__FILE__,3))."/".basename(dirname(__FILE__,2));?>/?action=login" method="POST">
             <label for="email">E-mail</label>
             <input type="text" name="email">
             <br>
