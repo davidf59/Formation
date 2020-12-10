@@ -1,8 +1,7 @@
 <?php
-  require("./Controllers/auth_controller.php");
   require("./Controllers/products_controller.php");
   require ("./vendor/autoload.php");
-
+/*
   use Dompdf\Dompdf;
   $dompdf = new Dompdf();
   $dompdf->loadHtml('hello world');
@@ -10,7 +9,7 @@
   $dompdf->render();
   $output = $dompdf->output();
   file_put_contents('Public/PDF/'.time().'.pdf', $output);
-
+*/
   spl_autoload_register(function ($class_name) {
     include $class_name . '.php';
   });
@@ -18,10 +17,10 @@
   if (isset($_GET['action'])) {
     switch ($_GET['action']) {
       case 'login':
-        login();
+        \Controllers\Auth_Controller::login();
         break;
       case 'register':
-        register();
+        \Controllers\Auth_Controller::register();
         break;
       case 'products':
         products();

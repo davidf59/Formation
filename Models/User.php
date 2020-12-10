@@ -1,12 +1,17 @@
 <?php
-require __DIR__."/../Database/DB.php";
- class User extends DB{
+namespace Models;
+
+ class User{
   private $Email;
   private $Password; 
   private $Nom;
   private $Prenom; 
   private $Adresse;
   private $Telephone;
+
+  function __construct(){
+    
+  }
 
   public static function create_user($Email,$Password) {
     $user = new User();
@@ -16,11 +21,10 @@ require __DIR__."/../Database/DB.php";
   }
 
   function get_user_by_email() {
-//    require __DIR__."/../Database/DB.php";    
-    $DB = new DB();
-
+    $DB = \Database\DB::getInstance();
+    echo var_dump($DB);
     $sql = "SELECT * FROM users WHERE email = '" . $_POST['email'] . "'";
-    $row = $this->singlerowDB($sql);
+    $row = $DB->singlerowDB($sql);
     return $row;
   }
 }
