@@ -1,6 +1,8 @@
 <?php
-  require("./Controllers/products_controller.php");
   require ("./vendor/autoload.php");
+
+  $url = dirname(__FILE__);
+  echo $url;
 /*
   use Dompdf\Dompdf;
   $dompdf = new Dompdf();
@@ -23,7 +25,10 @@
         \Controllers\Auth_Controller::register();
         break;
       case 'products':
-        products();
+        \Controllers\Products_Controller::products();
+        break;
+      case 'planetes':
+        \Controllers\Planetes_Controller::Planetes();
         break;
       default:
         \Controllers\Home::home();

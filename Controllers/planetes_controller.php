@@ -1,25 +1,16 @@
 <?php   
 namespace Controllers;
 
-class Products_Controller 
+class Planetes_Controller 
 {
-  public static function Products() 
+  public static function Planetes() 
   {
 //    require_once(__DIR__."/../Models/products.php");
     $tabaff = [];
     $tabdesc = [];
-    $product = new \Models\Products();   
+    $planete = new \Models\Planetes();   
 
   
-    if(isset($_POST['action']) && $_POST['action'] == "delete"){
-        echo '<br><br>';
-        echo $_POST['id'];
-        echo '<br><br>';
-        $product->del_product($_POST['id']);
-        $resdel=$product->del_product($_POST['id']);
-        echo $resdel;
-    }
-
     if(isset($_POST['ajout']) && $_POST['ajout'] == "insert"){
         $product->desc_product();
         $tabdesc=$product->desc_product();
@@ -29,6 +20,6 @@ class Products_Controller
         print_r($product->create_product($_POST["Name"],$_POST["Price"],$_POST["Famille"],$_POST["Tva"]));
     }
     $tabaff=$product->get_product();  
-    require __DIR__."/../Views/products.php";    
+    require __DIR__."/../Views/planetes.php";    
   }
 }

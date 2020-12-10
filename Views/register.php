@@ -4,7 +4,7 @@
 
 <h1>Page de connexion</h1>
 
-<form name="login" action="/Formation/?action=register" method="POST">
+<form name="login" action="./?action=register" method="POST">
             <label for="email">E-mail</label>
             <input type="text" name="email">
             <br>

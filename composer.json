@@ -3,6 +3,7 @@
     "require": {
         "php": ">=5.3",
         "nesbot/carbon": "^2.42",
-        "dompdf/dompdf": "^0.8.6"
+        "dompdf/dompdf": "^0.8.6",
+        "guzzlehttp/guzzle": "^7.2"
     }
 }
