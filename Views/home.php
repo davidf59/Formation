@@ -5,6 +5,7 @@
 <h1>L'accueil est ici</h1>
 
 <?php
+
 /*
   $client = new GuzzleHttp\Client();
   $res = $client->request('GET', 'http://swapi.dev/api/planets/');
@@ -13,10 +14,11 @@
   foreach ($tab->results as $col => $obj) {
     echo $obj->name;
   } */
+
 ?>
 
 <?php
-  $client = new GuzzleHttp\Client();
+/*  $client = new GuzzleHttp\Client();
   $r = $client->request('POST', 'https://jsonplaceholder.typicode.com/posts', [
     'form_params' => ['title' => 'foo',
                       'body' => 'bar',
@@ -27,7 +29,7 @@
   echo print_r($tab);
   
 
-/*  $client = new GuzzleHttp\Client();
+  $client = new GuzzleHttp\Client();
   $r = $client->request('GET', 'https://jsonplaceholder.typicode.com/posts/1');
   echo print_r(json_decode($r->getBody()));*/
 
