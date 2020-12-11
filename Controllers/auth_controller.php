@@ -35,7 +35,7 @@ class Auth_Controller
     {
         $errors = [];
         print_r($_POST);
-        if (isset($_POST["email"]) && isset($_POST["password"])) {
+        if (isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["token"])) {
             if (count(self::isLoginCorrect()) == 0) {
                 setcookie("auth", "eyTd1vsd", time()+3600, "/", "", 0);
                 header('location:index.php');
