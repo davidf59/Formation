@@ -37,6 +37,13 @@ namespace Models;
     return $tab;
   }
 
+  function get_product_by_IDS($IDS) {
+    $DB = \Database\DB::getInstance();
+    $sql = "SELECT * FROM products WHERE ID IN ".$IDS;
+    $tab = $DB->fetchDB($sql);
+    return $tab;
+  }
+
   function del_product($ID) {
     $DB = \Database\DB::getInstance();
     $sql = "DELETE FROM products WHERE ID = ".$ID;
