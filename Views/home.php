@@ -56,6 +56,20 @@ if ($droits):
     titre
 </h2>
 <p>
+    <?php 
+      foreach ($tabaff as $index => $propriete) {
+        echo $propriete['ID'];
+        echo '<form method="POST">
+                <img src="Public/IMG/'.$propriete['ref_image'].'" alt="image"/>
+                <input type="hidden" name="ID_produit" value ="'.$propriete['ID'].'">
+                <input type="submit" name="ajout_panier" value="Ajouter au panier"/>
+              </form>';
+      }
+    ?>
+<a href="./?action=panier">Afficher le panier</a>
+</p>
+
+</article></br></br></br>
     <a href="./?action=products">Table Products</a>
     <a href="./?action=planetes">Planetes</a>
 </p>

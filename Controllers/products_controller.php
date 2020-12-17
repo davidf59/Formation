@@ -26,7 +26,10 @@ class Products_Controller
     }
 
     if(isset($_POST["valid_ajout"]) && $_POST["valid_ajout"]=="ok_ajout"){
-        print_r($product->create_product($_POST["Name"],$_POST["Price"],$_POST["Famille"],$_POST["Tva"]));
+        print_r($product->create_product($_POST["Name"],$_POST["Price"],$_POST["Famille"],$_POST["Tva"],$_FILES["Ref_image"]['name']));
+        echo print_r($_FILES["Ref_image"]);
+        echo dirname(__FILE__,2)."/Public/IMG/".$_FILES["Ref_image"]['name'];
+        move_uploaded_file($_FILES["Ref_image"]['tmp_name'], dirname(__FILE__,2)."/Public/IMG/".$_FILES["Ref_image"]['name']);
     }
     $tabaff=$product->get_product();  
     require __DIR__."/../Views/products.php";    
