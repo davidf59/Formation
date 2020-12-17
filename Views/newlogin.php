@@ -13,11 +13,8 @@
             <label for="password">Mot de passe</label>
             <input type="password" name="password">
             <br>
-            <?php 
-                $token = \Utils\Crsf_token::getInstance($t);
-                $tab = $token->get_token();
-            ?>
-            <input type="hidden" name="token" value="<?= $tab ?>">
+            <input type="hidden" name="token" value="<?=\Utils\Crsf_token::get_token() ?>">
+            <?php echo session_id().'</br></br>'; echo \Utils\Crsf_token::get_token();?>
             <input type="submit" name="submit" value="Connexion">
 </form>
 

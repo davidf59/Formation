@@ -12,11 +12,12 @@
 </h1>
 
 
-<form method="POST">
+<form method="POST" enctype="multipart/form-data">
     Name : <input name="Name"/><br>
     Price : <input name="Price"/><br>
     Famille : <input name="Famille"/><br>
     Tva : <input name="Tva"/><br><br>
+    Image : <input type="file" name="Ref_image"/><br><br>
     <input type='hidden' name='valid_ajout' value='ok_ajout'>
     <input type='submit' value='Enregistrer'>
 </form>

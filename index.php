@@ -2,7 +2,8 @@
   require ("./vendor/autoload.php");
 
   $url = dirname(__FILE__);
-  echo $url;
+//  echo $url;
+  session_start();
 /*
   use Dompdf\Dompdf;
   $dompdf = new Dompdf();
@@ -30,6 +31,10 @@
       case 'planetes':
         \Controllers\Planetes_Controller::Planetes();
         break;
+      case 'panier':
+        \Controllers\Panier_Controller::Panier();
+        break;
+  
       default:
         \Controllers\Home::home();
         break;
