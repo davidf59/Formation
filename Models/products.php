@@ -30,13 +30,6 @@ namespace Models;
     return $tab;
   }
 
-  function get_product_by_ID($ID) {
-    $DB = \Database\DB::getInstance();
-    $sql = "SELECT * FROM products WHERE ID=".$ID;
-    $tab = $DB->fetchDB($sql);
-    return $tab;
-  }
-
   function get_product_by_IDS($IDS) {
     $DB = \Database\DB::getInstance();
     $sql = "SELECT * FROM products WHERE ID IN ".$IDS;
