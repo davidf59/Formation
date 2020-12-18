@@ -2,19 +2,12 @@
 
 <?php ob_start(); ?>
    
-<h1>Panier
-</h1>
+<h1>Votre panier</h1>
 
 <?php         
-    echo $_POST["ajout_panier"];
-
-//    echo print_r($tab_aff);
-
-
-
-    $temp_panier = [];
-    setcookie("panier","toto", time()+3600, "/", "", 0);
-    echo $_COOKIE["panier"];
-
+    foreach ($tabaff as $index => $propriete) {
+        echo $propriete['name'];
+        echo "<br/>";
+    } 
 $data = ob_get_clean();
 require('template.php'); 

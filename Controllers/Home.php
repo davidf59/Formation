@@ -7,9 +7,10 @@ class Home {
   	$droits = verifrights();
 
     $tabaff = [];
-    $tabpanier = [];
+    $tabpanier = isset($_COOKIE["panier"]) ? json_decode($_COOKIE["panier"]) : [];
     $upload_dir = dirname(__FILE__,2)."/Public/IMG/";
 
+      print_r(json_decode($_COOKIE["panier"]));
 
     $product = new \Models\Products();   
 
@@ -17,8 +18,10 @@ class Home {
 
     if(isset($_POST["ID_produit"])){ 
     	echo 'Article ajouté au panier';
-      array_push($tabpanier, $_POST["ID_produit"]) ;
+      array_push($tabpanier, $_POST["ID_produit"]);
+      $tabpanier = array_unique($tabpanier);
       echo print_r($tabpanier);
+      setcookie("panier", json_encode($tabpanier), time()+3600, "/", "", 0);
     }	
 
     require __DIR__."/../Views/home.php";   
